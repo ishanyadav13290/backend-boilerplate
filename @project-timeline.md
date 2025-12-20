@@ -1,3 +1,15 @@
+### 2025-08-27
+- Added Swagger setup:
+  - Installed `swagger-ui-express` and `swagger-jsdoc`
+  - Created `src/config/swagger.ts` with OpenAPI 3 and JWT bearer
+  - Wired docs at `/docs` and `/docs.json` in `src/app.ts`
+  - Protected docs in production with optional Basic Auth via `DOCS_USER`/`DOCS_PASS`
+  - Added JSDoc annotations for `auth` and `users` routes, and health check
+  - Updated `README.md` with docs usage and env flags
+
+#### Discovered During Work
+- Consider adding global schemas for common responses and `User` model
+- Optionally add tags description and externalDocs
 # Project Timeline
 
 ## Completed

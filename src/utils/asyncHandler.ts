@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from "express";
-import { logger } from "./logger";
 
 type RequestWithUser = Request & { [key: string]: any };
 
@@ -22,7 +21,7 @@ export const asyncHandler = (
         } : {};
 
         // Log the error details, including file name, line number, column number
-        logger.error({
+        console.error({
           message: error.message,
           stack: error.stack,
           fileName,
@@ -31,7 +30,7 @@ export const asyncHandler = (
         });
       } catch (err) {
         // If parsing the stack trace fails, log the error directly
-        logger.error({
+        console.error({
           message: "Failed to capture stack trace",
           error: err,
         });

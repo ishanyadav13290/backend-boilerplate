@@ -21,6 +21,18 @@ Boilerplate for backend server using TypeScript, Express, and MongoDB.
    npm run dev
    ```
 
+## API Docs (Swagger)
+
+- Swagger UI: `/docs` (disabled in production unless `ENABLE_DOCS=true`)
+- Swagger JSON: `/docs.json`
+- Security: JWT Bearer (`Authorization: Bearer <token>`) for protected routes
+- Optional basic auth for docs in production: set `DOCS_USER` and `DOCS_PASS`
+
+### Environment variables for docs
+
+- `ENABLE_DOCS=true` to enable docs in prod
+- `DOCS_USER`, `DOCS_PASS` to protect `/docs` with Basic Auth in prod
+
 4. Health check:
    ```bash
    curl http://localhost:8080/health

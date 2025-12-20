@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from "express";
-import { logger } from "./logger";
 import { HttpStatusCodes } from "./errorCodes";
 
 export const errorHandler = (
@@ -8,7 +7,7 @@ export const errorHandler = (
   res: Response,
   next: NextFunction
 ) => {
-  logger.error({
+  console.error({
     message: err.message,
     stack: err.stack,
     url: req.originalUrl,
