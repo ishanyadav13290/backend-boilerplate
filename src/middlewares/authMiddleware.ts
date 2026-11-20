@@ -23,7 +23,7 @@ export const authenticateToken = async (
 
   try {
     const decoded = jwt.verify(token, SECRET_KEY) as { userId: string };
-    const user = await User.findById(decoded.userId, { password: 0, googleRefreshToken: 0, isApproved: 0 }).lean();
+    const user = await User.findById(decoded.userId, { password: 0 }).lean();
     if (!user) {
       res.status(403).json({ message: "User not found" });
       return
